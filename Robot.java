@@ -2,7 +2,9 @@
 
 package frc.robot;
 
-import com.revrobotics.*;
+import com.revrobotics.CANSparkMax;
+import com.revrobotics.CANSparkMaxLowLevel;
+import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 
 import edu.wpi.first.cameraserver.CameraServer;
 import edu.wpi.first.wpilibj.Joystick;
@@ -17,10 +19,10 @@ public class Robot extends TimedRobot {
   private static final int _1 = 1;
   // name the victor talons so they each have an id number, left1 means first
   // motor on left
-  WPI_Spark left1 = new WPI_Spark(1);
-  WPI_Spark left2 = new WPI_Spark(2);
-  WPI_Spark right1 = new WPI_Spark(3);
-  WPI_Spark right2 = new WPI_Spark(4);
+  CANSparkMax = new CANSparkMax (2, MotorType.kBrushless);
+  CANSparkMax left2 = new WPI_Spark(1, MotorType.kBrushless);
+  CANSparkMax right1 = new WPI_Spark(4, MotorType.kBrushless);
+  CANSparkMax right2 = new WPI_Spark(3, MotorType.kBrushless);
 
   //hook left contrlloerstogether and righ controllers together
   SpeedControllerGroup left = new SpeedControllerGroup(left1, left2);
